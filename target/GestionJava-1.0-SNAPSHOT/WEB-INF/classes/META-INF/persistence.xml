@@ -1,0 +1,27 @@
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
+             version="3.0">
+    <persistence-unit name="hibernate">
+        <description>
+            Persistence unit for Hibernate
+        </description>
+
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <properties>
+            <property name="packagesToScan" value="com.shaimeur.entities"/>
+<!--            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://remotemysql.com:3306/Bl5yh9ktIe?user=Bl5yh9ktIe&amp;password=bz5Pv4aRxp"/>-->
+    <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3305/GESTION-JAVA?user=root&amp;password=root"/>
+
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="jakatra.persistence.jdbc.user" value="root"/>
+            <property name="jakatra.persistence.jdbc.password" value="root"/>
+<!--        <property name="jakatra.persistence.schema-generation.database.action" value="drop-and-create"/>-->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+            <property name="hibernate.id.new_generator_mappings" value="false"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="false"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+        </properties>
+    </persistence-unit>
+</persistence>
