@@ -17,7 +17,8 @@
     <title>Dashboard</title>
 </head>
 <body>
-        <p>email : ${email}</p>
-        <p>password : ${password}</p>
+<p>email : ${email}</p>
+<p>password : ${password}</p>
+<a href ="${pageContext.servletContext.contextPath}/AddEmployee">Add new Employee  </a>
 </body>
 </html>

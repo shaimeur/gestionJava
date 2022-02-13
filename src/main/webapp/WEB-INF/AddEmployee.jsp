@@ -11,6 +11,26 @@
     <title>Add</title>
 </head>
 <body>
+<form action="${pageContext.servletContext.contextPath}/AddEmployee" method="post">
 
+    <label for="email">email</label><br>
+    <input type="text" id="email" name="email"><br>
+
+    <label for="firstName">firstName</label><br>
+    <input type="firstName" id="firstName" name="firstName"><br>
+
+    <label for="lastName">lastName</label><br>
+    <input type="lastName" id="lastName" name="lastName"><br>
+
+    <label for="password">Password</label><br>
+    <input type="password" id="password" name="password"><br>
+
+
+
+
+    <input type="submit" value="Submit">
+
+
+</form>
 </body>
 </html>

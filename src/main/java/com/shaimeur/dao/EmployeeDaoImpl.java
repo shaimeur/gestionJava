@@ -15,7 +15,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
 
-        Employee employee1 = new Employee(employee.getId(), employee.getEmail(), employee.getPassword(), employee.getFirstName(), employee.getLastName());
+        Employee employee1 = new Employee(employee.getId(),  employee.getFirstName(), employee.getLastName(),employee.getEmail(),employee.getPassword());
         em.persist(employee1);
 
         em.getTransaction().commit();

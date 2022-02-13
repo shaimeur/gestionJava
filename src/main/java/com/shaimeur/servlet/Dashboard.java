@@ -15,15 +15,26 @@ public class Dashboard extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         req.getServletContext().getRequestDispatcher("/WEB-INF/Dashboard.jsp").forward(req,resp);
+
         HttpSession session = req.getSession();
+
         session.setAttribute("isLoggedIn",true);
+
         Admin admin = (Admin) session.getAttribute(("admin"));
+
         if (admin != null){
+
             System.out.println(admin.getEmail() +" " + admin.getPassword() );
 
         }else {
+
             System.out.println("no user session attributed!!");
+
         }
     }
 
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.sendRedirect(req.getContextPath()+"/AddEmployee");
+    }
 }
