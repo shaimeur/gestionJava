@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id ;
+    Long id;
     @Column(name = "firstName")
     String firstName;
     @Column(name = "lastName")
@@ -70,7 +70,7 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(Long id, String firstName, String lastName, String email, String password) {
+    public Employee(Long id, String email, String firstName, String lastName, String password) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;

@@ -11,6 +11,6 @@
     <title>Delete</title>
 </head>
 <body>
-
+    <h2>Delete Employee</h2>
 </body>
 </html>

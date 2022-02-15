@@ -11,6 +11,8 @@
     <title>Update</title>
 </head>
 <body>
-
+    <h2>Update Employee</h2>
+    <p> <${employees.getFirstname()}></p>
+    
 </body>
 </html>
