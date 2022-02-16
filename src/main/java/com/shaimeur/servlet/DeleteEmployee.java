@@ -1,5 +1,7 @@
 package com.shaimeur.servlet;
 
+import com.shaimeur.dao.EmployeeDao;
+import com.shaimeur.dao.EmployeeDaoImpl;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -11,7 +13,11 @@ import java.io.IOException;
 public class DeleteEmployee extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getServletContext().getRequestDispatcher("/WEB-INF/DeleteEmployee.jsp").forward(req,resp);
+        Long id = Long.parseLong(req.getParameter("id"));
+        System.out.println(id);
+        EmployeeDao employeeDao = new EmployeeDaoImpl() ;
+        employeeDao.delete(id);
+        resp.sendRedirect("Dashboard");
     }
 
     @Override

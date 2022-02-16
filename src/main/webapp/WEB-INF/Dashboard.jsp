@@ -30,20 +30,23 @@
         <td>email</td>
         <td>firstname</td>
         <td>lastname</td>
+        <td>Action</td>
+
     </tr>
     </thead>
     <tbody>
-    <%List<Employee> employees = (List<Employee>) request.getAttribute("employees");
-
-        for(int i = 0 ;i < employees.size() ; i++ ) {%>
+    <%
+        List<Employee> employees = (List<Employee>) request.getAttribute("employees");
+        for(int i = 0 ;i < employees.size() ; i++ ) {
+    %>
     <tr>
-        <td><% out.println(employees.get(i).getId());  %></td>
-        <td><% out.println(employees.get(i).getEmail());%></td>
-        <td><% out.println(employees.get(i).getFirstName());%></td>
-        <td><% out.println(employees.get(i).getLastName());%></td>
+        <td><%=employees.get(i).getId() %></td>
+        <td><%=employees.get(i).getEmail()%></td>
+        <td><%=employees.get(i).getFirstName()%></td>
+        <td><%=employees.get(i).getLastName()%></td>
         <td>
-            <a href="${pageContext.servletContext.contextPath}/UpdateEmployee">Update  Employee </a>
-            <a href="${pageContext.servletContext.contextPath}/DeleteEmployee">Delete Employee </a>
+            <a href="${pageContext.servletContext.contextPath}/UpdateEmployee?id=<%=employees.get(i).getId()%>">Update</a>
+            <a href="${pageContext.servletContext.contextPath}/DeleteEmployee?id=<%=employees.get(i).getId()%>">Delete</a>
         </td>
 
 

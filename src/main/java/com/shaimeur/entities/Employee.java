@@ -70,11 +70,19 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(Long id, String email, String firstName, String lastName, String password) {
+    public Employee(Long id, String email,String firstName, String lastName ) {
         this.id = id;
+        this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
+
+    }
+
+    public Employee(Long id, String email, String firstName, String lastName, String password) {
+        this.id = id;
         this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.password = password;
     }
 

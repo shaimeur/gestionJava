@@ -24,9 +24,9 @@ public class AddEmployee extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String email = req.getParameter("email");
-        String password = req.getParameter("password");
         String firstName = req.getParameter("firstName");
         String lastName = req.getParameter("lastName");
+        String password = req.getParameter("password");
 
         if ((email == null) || (password == null) || (firstName == null) || (lastName == null) ){
             resp.sendRedirect("AddEmployee");

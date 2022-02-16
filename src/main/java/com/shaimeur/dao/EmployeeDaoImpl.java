@@ -15,7 +15,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
 
-        Employee employee1 = new Employee(employee.getId(),  employee.getFirstName(), employee.getLastName(),employee.getEmail(),employee.getPassword());
+        Employee employee1 = new Employee(employee.getId(),employee.getEmail(),  employee.getFirstName(), employee.getLastName(),employee.getPassword());
         em.persist(employee1);
 
         em.getTransaction().commit();
@@ -28,7 +28,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
 
-        Employee employee = em.getReference(Employee.class,id);
+        Employee employee = em.find(Employee.class,id);
 
 
         em.getTransaction().commit();
@@ -53,20 +53,20 @@ public class EmployeeDaoImpl implements EmployeeDao {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
 
-        Employee employee1 = new Employee(employee.getId(), employee.getEmail(), employee.getPassword(), employee.getFirstName(), employee.getLastName());
-        em.merge(employee1);
+        // Employee employee1 = new Employee(employee.getId(), employee.getEmail(), employee.getFirstName(), employee.getLastName(), employee.getPassword());
+        em.merge(employee);
 
         em.getTransaction().commit();
         em.close();
-        return employee1 ;
+        return employee ;
     }
 
     @Override
-    public boolean delete(long id) {
+    public boolean delete(Long id) {
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
 
-        Employee employee = em.getReference(Employee.class,id);
+        Employee employee = em.getReference(Employee.class, id);
         em.remove(employee);
 
         em.getTransaction().commit();

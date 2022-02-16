@@ -10,5 +10,5 @@ public interface EmployeeDao {
     Employee find(long id);
     ArrayList<Employee> getAll();
     Employee update(Employee employee);
-    boolean delete(long id);
+    boolean delete(Long id);
 }
